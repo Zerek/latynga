@@ -36,7 +36,7 @@
                       <!-- <h2 class="text-muted">(оқылуы: латынға)</h2> -->
                       <p class="lead">Кириллица арқылы жазылған мәтінді латын әліпбиінде жазылған мәтінге ауыстыруға арналған барузер қосымшасы.</p>
                       <p>
-                          <a class="btn btn-success" href="#" role="button">Жүктеу (версия 0.1)</a>
+                          <a class="btn btn-success" href="https://chrome.google.com/webstore/detail/latynga/incbinpfldkcchaacjpaiieenhpobiel" role="button" target="_blank">Жүктеу (версия 0.1)</a>
                           <a class="btn btn-outline-secondary" href="#" role="button">Github</a>
                       </p>
                       <p></p>
@@ -60,7 +60,7 @@
                         <h2 class="text-center">Қолдаушылар</h2><br>
                       </div>
 
-                      <div id="spns" class="col-auto">
+                      <div id="spns" class="col-auto text-center">
 
                       </div>
                     </div>
@@ -92,8 +92,8 @@
             console.log("starting...");
             $.getJSON("data/sponsers.json", function(data){
               $.each(data.sponsors, function(key, val){
-                alert(val.email);
-                console.log(val.email);
+                var img = `<img src="https://www.gravatar.com/avatar/${val.email}" alt="${val.fullname}" />`;
+                $("#spns").append(img);
               })
             })
           });
