@@ -6,7 +6,7 @@ body {
   
   /* Everything but the jumbotron gets side spacing for mobile first views */
   .header,
-  .marketing,
+  .diving,
   .footer {
     padding-right: 1rem;
     padding-left: 1rem;
@@ -41,7 +41,7 @@ body {
     margin: 2rem 0;
   }
   
-  /* Main marketing message and sign up button */
+  /* Main diving message and sign up button */
   .jumbotron {
     text-align: center;
     border-bottom: .05rem solid #e5e5e5;
@@ -51,11 +51,11 @@ body {
     font-size: 1.5rem;
   } */
   
-  /* Supporting marketing content */
-  .marketing {
+  /* Supporting diving content */
+  .diving {
     margin: 3rem 0;
   }
-  .marketing p + h4 {
+  .diving p + h4 {
     margin-top: 1.5rem;
   }
   
@@ -63,7 +63,7 @@ body {
   @media screen and (min-width: 48em) {
     /* Remove the padding we set earlier */
     .header,
-    .marketing,
+    .diving,
     .footer {
       padding-right: 0;
       padding-left: 0;
