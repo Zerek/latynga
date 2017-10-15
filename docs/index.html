@@ -92,7 +92,7 @@
             console.log("starting...");
             $.getJSON("data/sponsers.json", function(data){
               $.each(data.sponsors, function(key, val){
-                var img = `<img src="https://www.gravatar.com/avatar/${val.email}" alt="${val.fullname}" />`;
+                var img = `<img src="//gravatar.com/avatar/${val.email}" alt="${val.fullname}" class="rounded-circle" />`;
                 $("#spns").append(img);
               })
             })
