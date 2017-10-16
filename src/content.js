@@ -5,21 +5,24 @@ var nea = ["a", "a'", "b", "d", "e", "f", "g", "g'", "h", "Һ", "i", "i'", "i'",
 chrome.runtime.onMessage.addListener(
     function(request, sender, sendResponse) {
       if( request.message === "clicked_browser_action" ) {
-        $("body").children().each(function() {
-            
-            var i = 0;
-            console.log("started replacing");
-            for(i=0; i < old.length; i++){
-                $(this).html($(this).html().replace(new RegExp(old[i], 'g'),nea[i]));
-                $(this).html($(this).html().replace(new RegExp(old[i].toUpperCase(), 'g'),nea[i].toUpperCase()));
-            }
-            $(this).html($(this).html().replace(/ц/g,"s"));
-            $(this).html($(this).html().replace(/Ц/g,"S"));
-            $(this).html($(this).html().replace(/щ/g,"c'"));
-            $(this).html($(this).html().replace(/Щ/g,"C'"));
-            $(this).html($(this).html().replace(/ь/g,""));
-            $(this).html($(this).html().replace(/ъ/g,""));
-        });  
+        
+        var i = 0;
+        console.log("started replacing");
+        for(i=0; i < old.length; i++){
+            $("body").html($("body").html().replace(new RegExp(old[i], 'g'),nea[i]));
+            $("body").html($("body").html().replace(new RegExp(old[i].toUpperCase(), 'g'),nea[i].toUpperCase()));
+        }
+        $("body").html($("body").html().replace(/ц/g,"s"));
+        $("body").html($("body").html().replace(/Ц/g,"S"));
+        $("body").html($("body").html().replace(/щ/g,"c'"));
+        $("body").html($("body").html().replace(/Щ/g,"C'"));
+        $("body").html($("body").html().replace(/я/g,"i'a"));
+        $("body").html($("body").html().replace(/Я/g,"I'a"));
+        $("body").html($("body").html().replace(/э/g,"e"));
+        $("body").html($("body").html().replace(/Э/g,"E"));
+        $("body").html($("body").html().replace(/ь/g,""));
+        $("body").html($("body").html().replace(/ъ/g,""));
+    
       }
     }
   );
