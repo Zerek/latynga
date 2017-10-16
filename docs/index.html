@@ -7,7 +7,18 @@
         src="https://code.jquery.com/jquery-3.2.1.min.js"
         integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
         crossorigin="anonymous"></script>
-        
+        <script>
+          console.log("waiting...");
+          $(document).ready(function(){
+            console.log("starting...");
+            $.getJSON("data/sponsers.json", function(data){
+              $.each(data.sponsors, function(key, val){
+                var img = `<img src="//gravatar.com/avatar/${val.email}" title="${val.fullname}" class="img-fluid rounded-circle" style="width:64px;"/>`;
+                $("#spns").append(img);
+              })
+            })
+          });
+        </script>
     </head>
     <body>
             <div id="home" class="container">
@@ -63,7 +74,6 @@
                       <div id="spns" class="col-auto text-center">
 
                       </div>
-                      <br><br>
                     </div>
 
                     <!-- <div class="row diving">
@@ -87,17 +97,6 @@
             <p>created with (love) by <a href="https://fb.me/igibek" target="_blank">Igibek Koishybayev</a> <span class="float-right">version 0.1</span></p>
           </footer>              
         </div>
-        <script>
-          console.log("waiting...");
-          $(document).ready(function(){
-            console.log("starting...");
-            $.getJSON("data/sponsers.json", function(data){
-              $.each(data.sponsors, function(key, val){
-                var img = `<img src="//gravatar.com/avatar/${val.email}" title="${val.fullname}" class="img-fluid rounded-circle" style="width:64px;"/>`;
-                $("#spns").append(img);
-              })
-            })
-          });
-        </script>
+        
     </body>
 </html>
