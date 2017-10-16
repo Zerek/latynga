@@ -7,18 +7,7 @@
         src="https://code.jquery.com/jquery-3.2.1.min.js"
         integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
         crossorigin="anonymous"></script>
-        <script>
-          console.log("waiting...");
-          $(document).ready(function(){
-            console.log("starting...");
-            $.getJSON("data/sponsers.json", function(data){
-              $.each(data.sponsors, function(key, val){
-                var img = `<img src="//gravatar.com/avatar/${val.email}" title="${val.fullname}" class="img-fluid rounded-circle" style="width:64px;"/>`;
-                $("#spns").append(img);
-              })
-            })
-          });
-        </script>
+        
     </head>
     <body>
             <div id="home" class="container">
@@ -68,12 +57,15 @@
                     <br><br>
                     <div class="row justify-content-center driving">
                       <div class="col-md-12">
-                        <h2 class="text-center">Қолдаушылар</h2><br>
+                        <h2 class="text-center">Демеушілер</h2><br>
                       </div>
-
-                      <div id="spns" class="col-auto text-center">
-
+                      <div class="col-6">
+                        <h4>Компаниялар</h4>
+                        <div id="cmpn"></div>
                       </div>
+                      <div class="col-6"></div>
+                      <h4>Тұлғалар</h4>
+                      <div id="indv"></div>
                     </div>
 
                     <!-- <div class="row diving">
@@ -97,6 +89,21 @@
             <p>created with (love) by <a href="https://fb.me/igibek" target="_blank">Igibek Koishybayev</a> <span class="float-right">version 0.1</span></p>
           </footer>              
         </div>
-        
+        <script>
+          console.log("waiting...");
+          $(document).ready(function(){
+            console.log("starting...");
+            $.getJSON("data/sponsers.json", function(data){
+              $.each(data.individuals, function(key, val){
+                var img = `<img src="//gravatar.com/avatar/${val.hash}" title="${val.name}" class="img-fluid rounded-circle" style="width:64px;"/>`;
+                $("#indv").append(img);
+              });
+              $.each(data.companies, function(key, val){
+                var img = `<img src="//gravatar.com/avatar/${val.hash}" title="${val.title}" class="img-fluid rounded-circle" style="width:64px;"/>`;
+                $("#cmpn").append(img);
+              })
+            })
+          });
+        </script>
     </body>
 </html>

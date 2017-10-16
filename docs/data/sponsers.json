@@ -1,8 +1,14 @@
 {
-    "sponsors": [
+    "individuals": [
         {
-            "fullname": "Igibek Koishybayev",
-            "email": "a0c16f881f85e5d67ccb925609744df5"
+            "name": "Igibek Koishybayev",
+            "hash": "a0c16f881f85e5d67ccb925609744df5"
+        }
+    ],
+    "companies":[
+        {
+            "title": "Zerek Group",
+            "hash":"a0c16f881f85e5d67ccb925609744df5"
         }
     ]
 }
