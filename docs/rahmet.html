@@ -15,13 +15,13 @@
                       <nav id="srlspy-nav">
                         <ul class="nav nav-pills float-right">
                           <li class="nav-item">
-                            <a class="nav-link active" href="#home">Басты бет <span class="sr-only">(current)</span></a>
+                            <a class="nav-link" href="/latynga">Басты бет <span class="sr-only">(current)</span></a>
                           </li>
                           <li class="nav-item">
-                            <a class="nav-link" href="#instruction">Қолдау</a>
+                            <a class="nav-link" href="/latynga#support">Қолдау</a>
                           </li>
                           <li class="nav-item">
-                            <a class="nav-link" href="#sponsor">Демеушілер</a>
+                            <a class="nav-link" href="/latynga#sponsor">Демеушілер</a>
                           </li>
                           <li class="nav-item">
                             <a class="nav-link" href="#team">Команда</a>
@@ -33,11 +33,10 @@
               
                     <div class="jumbotron">
                       <h1 class="display-3">Рахмет!</h1>
-                      <!-- <h2 class="text-muted">(оқылуы: латынға)</h2> -->
-                      <p class="lead">Сіздің берген көмегіңіз дұрыс жерін табады</p>
+                      <p class="lead">Сіздің аты-жөніңіз 5 жұмыс күн ішінде сайтқа қосылады. <br/>
+                        Сіздің берген көмегіңіз дұрыс жерін табады!</p>
                       <p>
-                          <a class="btn btn-success" href="https://chrome.google.com/webstore/detail/latynga/incbinpfldkcchaacjpaiieenhpobiel" role="button" target="_blank">Жүктеу (версия 0.1)</a>
-                          <a class="btn btn-outline-secondary" href="#" role="button">Github</a>
+                          <a class="btn btn-success" href="https://chrome.google.com/webstore/detail/latynga/incbinpfldkcchaacjpaiieenhpobiel" role="button" target="_blank">Жүктеу (версия 0.3)</a>
                       </p>
                       <p></p>
                     </div>
@@ -63,14 +62,14 @@
           </footer>              
         </div>
         <script>
-          console.log("waiting...");
           $(document).ready(function(){
-            console.log("starting...");
             $.getJSON("data/sponsers.json", function(data){
+              $("#indv").html("");
               $.each(data.individuals, function(key, val){
                 var img = `<img src="//gravatar.com/avatar/${val.hash}" title="${val.name}" class="img-fluid rounded-circle" style="width:50px;"/>`;
                 $("#indv").append(img);
               });
+              $("#cmpn").html("");
               $.each(data.companies, function(key, val){
                 var img = `<img src="//gravatar.com/avatar/${val.hash}" title="${val.title}" class="img-fluid rounded-circle" style="width:50px;"/>`;
                 $("#cmpn").append(img);

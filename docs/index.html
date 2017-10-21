@@ -18,7 +18,7 @@
                             <a class="nav-link active" href="#home">Басты бет <span class="sr-only">(current)</span></a>
                           </li>
                           <li class="nav-item">
-                            <a class="nav-link" href="#instruction">Қолдау</a>
+                            <a class="nav-link" href="#support">Қолдау</a>
                           </li>
                           <li class="nav-item">
                             <a class="nav-link" href="#sponsor">Демеушілер</a>
@@ -36,12 +36,12 @@
                       <!-- <h2 class="text-muted">(оқылуы: латынға)</h2> -->
                       <p class="lead">Кириллица арқылы жазылған мәтінді латын әліпбиінде жазылған мәтінге ауыстыруға арналған барузер қосымшасы.</p>
                       <p>
-                          <a class="btn btn-success" href="https://chrome.google.com/webstore/detail/latynga/incbinpfldkcchaacjpaiieenhpobiel" role="button" target="_blank">Жүктеу (версия 0.1)</a>
+                          <a class="btn btn-success" href="https://chrome.google.com/webstore/detail/latynga/incbinpfldkcchaacjpaiieenhpobiel" role="button" target="_blank">Жүктеу (версия 0.3)</a>
                           <a class="btn btn-outline-secondary" href="#" role="button">Github</a>
                       </p>
                       <p></p>
                     </div>
-                    <div id = "instruction" class="row justify-content-center driving">
+                    <div id = "support" class="row justify-content-center driving">
                         <div class="col-md-12">
                           <h2 class="text-center">Қолдау көрсету</h2><br>
                           <p>Егер сіз жобаның әрі қарай дамығанын қаласаңыз, <strong>Yandex.Money</strong> арқылы көмектесе аласыз.</p>
@@ -55,7 +55,7 @@
                         
                     </div>
                     <br><br>
-                    <div class="row justify-content-center driving">
+                    <div id = "sponsor" class="row justify-content-center driving">
                       <div class="col-md-12">
                         <h2 class="text-center">Демеушілер</h2><br>
                       </div>
@@ -69,36 +69,20 @@
                       </div>
                     </div>
                     <p><br></p>
-                    <!-- <div class="row diving">
-                      <div class="col-md-12">
-                          <h2 id="sponsor" class="text-center">Демеушілер</h2><br><br>
-                      </div>
-                      <div class="col-4 col-md-2">
-                        <a href="https://zerek.kz" target="_blank"><img src="../docs/images/zerek.png" class="img-fluid"></a>
-                      </div>
-                      <div class="col-8 col-md-4">
-                        <strong>Zerek Group</strong>
-                        <p>Тілдік аударма компаниясы.<br> <a href="https://zerek.kz">zerek.kz</a></p>
-                      </div>
-                      <div class="col-4 col-md-1">
-                        </div>
-                        <div class="col-8 col-md-3">
-                        </div>
-                    </div> -->
                     
-          <footer class="footer">
-            <p>created with (love) by <a href="https://fb.me/igibek" target="_blank">Igibek Koishybayev</a> <span class="float-right">version 0.1</span></p>
+          <footer id="team" class="footer">
+            <p>created with (love) by <a href="https://fb.me/igibek" target="_blank">Igibek Koishybayev</a> <span class="float-right">version 0.3</span></p>
           </footer>              
         </div>
         <script>
-          console.log("waiting...");
           $(document).ready(function(){
-            console.log("starting...");
             $.getJSON("data/sponsers.json", function(data){
+              $("#indv").html("");
               $.each(data.individuals, function(key, val){
                 var img = `<img src="//gravatar.com/avatar/${val.hash}" title="${val.name}" class="img-fluid rounded-circle" style="width:50px;"/>`;
                 $("#indv").append(img);
               });
+              $("#cmpn").html("");
               $.each(data.companies, function(key, val){
                 var img = `<img src="//gravatar.com/avatar/${val.hash}" title="${val.title}" class="img-fluid rounded-circle" style="width:50px;"/>`;
                 $("#cmpn").append(img);
