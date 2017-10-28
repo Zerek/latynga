@@ -85,7 +85,7 @@
                 link.rel = "noopener";
                 link.target = "_blank";
                 link.href = val.link;
-                let img = `<img src="//gravatar.com/avatar/${val.hash}" title="${val.name}" class="img-fluid rounded-circle"/>`;
+                let img = `<img src="//gravatar.com/avatar/${val.hash}?s=50" title="${val.name}" class="img-fluid rounded-circle"/>`;
                 link.innerHTML = img;
                 $("#indv").append(link);
               });
