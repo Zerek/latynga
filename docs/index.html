@@ -56,15 +56,12 @@
                     </div>
                     <br><br>
                     <div id = "sponsor" class="row justify-content-center driving">
-                      <div class="col-md-12">
-                        <h2 class="text-center">Демеушілер</h2><br>
-                      </div>
-                      <div class="col-6">
-                        <h5>Компаниялар</h5>
+                      <div class="col-12">
+                        <h2 class="text-center display-4">Демеушілер</h2><br>
                         <div id="cmpn"></div>
                       </div>
-                      <div class="col-6">
-                        <h5>Тұлғалар</h5>
+                      <div class="col-12">
+                        <h5 class="text-center display-4">Тұлғалар</h5>
                         <div id="indv"></div>
                       </div>
                     </div>
@@ -96,7 +93,7 @@
                 link.rel = "noopener";
                 link.target = "_blank";
                 link.href = val.link;
-                let img = `<img src="//gravatar.com/avatar/${val.hash}" title="${val.title}" class="img-fluid rounded-circle"/>`;
+                let img = `<img src="//gravatar.com/avatar/${val.hash}?s=50" title="${val.title}" class="img-fluid rounded-circle"/>`;
                 link.innerHTML = img;
                 $("#cmpn").append(link);
               })
