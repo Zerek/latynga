@@ -81,22 +81,22 @@
 
               $("#indv").html("");
               $.each(data.individuals, function(key, val){
-                var link = document.createElement("a");
+                let link = document.createElement("a");
                 link.rel = "noopener";
                 link.target = "_blank";
                 link.href = val.link;
-                var img = `<img src="//gravatar.com/avatar/${val.hash}" title="${val.name}" class="img-fluid rounded-circle" style="width:50px;"/>`;
+                let img = `<img src="//gravatar.com/avatar/${val.hash}" title="${val.name}" class="img-fluid rounded-circle"/>`;
                 link.innerHTML = img;
                 $("#indv").append(link);
               });
 
               $("#cmpn").html("");
               $.each(data.companies, function(key, val){
-                var link = document.createElement("a");
+                let link = document.createElement("a");
                 link.rel = "noopener";
                 link.target = "_blank";
                 link.href = val.link;
-                var img = `<img src="//gravatar.com/avatar/${val.hash}" title="${val.title}" class="img-fluid rounded-circle" style="width:50px;"/>`;
+                let img = `<img src="//gravatar.com/avatar/${val.hash}" title="${val.title}" class="img-fluid rounded-circle"/>`;
                 link.innerHTML = img;
                 $("#cmpn").append(link);
               })
