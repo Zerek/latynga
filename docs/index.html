@@ -50,7 +50,7 @@
                           </p>
                         </div>
                         <div class="col-auto">
-                          <iframe frameborder="0" allowtransparency="true" scrolling="no" src="https://money.yandex.ru/embed/donate.xml?account=410013860942965&quickpay=donate&payment-type-choice=on&default-sum=50&targets=%D0%B6%D0%BE%D0%B1%D0%B0%D0%BD%D1%8B+%D2%9B%D0%BE%D0%BB%D0%B4%D0%B0%D1%83&target-visibility=on&project-name=Latynga&project-site=%2F%2Figibek.com%2Flatynga&button-text=02&fio=on&mail=on&successURL=%2F%2Figibek.com%2Flatynga%2Frahmet.html" width="403" height="117"></iframe>
+                          <iframe frameborder="0" allowtransparency="true" scrolling="no" src="https://money.yandex.ru/embed/donate.xml?account=410013860942965&quickpay=donate&payment-type-choice=on&default-sum=100&targets=%D0%96%D0%BE%D0%B1%D0%B0%D0%BD%D1%8B+%D2%9B%D0%BE%D0%BB%D0%B4%D0%B0%D1%83&target-visibility=on&project-name=Latynga&project-site=https%3A%2F%2Figibek.github.io%2Flatynga&button-text=02&fio=on&mail=on&successURL=https%3A%2F%2Figibek.github.io%2Flatynga%2Frahmet.html" width="403" height="117"></iframe>
                         </div>
                         
                     </div>
@@ -79,8 +79,14 @@
             $.getJSON("data/sponsers.json", function(data){
               $("#indv").html("");
               $.each(data.individuals, function(key, val){
+                var link = document.createElement("a");
+                link.src = val.link;
+                link.target = "_blank";
+                link.rel = "noopener";
+                
                 var img = `<img src="//gravatar.com/avatar/${val.hash}" title="${val.name}" class="img-fluid rounded-circle" style="width:50px;"/>`;
-                $("#indv").append(img);
+                link.innerHTML = img;
+                $("#indv").append(link);
               });
               $("#cmpn").html("");
               $.each(data.companies, function(key, val){

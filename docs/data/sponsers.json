@@ -2,13 +2,15 @@
     "individuals": [
         {
             "name": "Igibek Koishybayev",
-            "hash": "a0c16f881f85e5d67ccb925609744df5"
+            "hash": "a0c16f881f85e5d67ccb925609744df5",
+            "link": "https://fb.me/igibek"
         }
     ],
     "companies":[
         {
             "title": "Zerek Group",
-            "hash":"a0c16f881f85e5d67ccb925609744df5"
+            "hash":"a0c16f881f85e5d67ccb925609744df5",
+            "link":"https://zerek.kz"
         }
     ]
 }
