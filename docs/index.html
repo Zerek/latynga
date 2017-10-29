@@ -43,7 +43,7 @@
                     </div>
                     <div id = "support" class="row justify-content-center driving">
                         <div class="col-md-12">
-                          <h2 class="text-center">Қолдау көрсету</h2><br>
+                          <h2 class="text-center" style="font-weight:300">Қолдау көрсету</h2><br>
                           <p>Егер сіз жобаның әрі қарай дамығанын қаласаңыз, <strong>Yandex.Money</strong> арқылы көмектесе аласыз.</p>
                           <p>Әр көмектескен адамның <strong>аты-жөні</strong> мен <strong>суреті</strong> бұл беттің қолдаушылар бөлігінде көрсетілетін болады. 
                             Yandex.Money арқылы ақша аударға өзіңіздің аты-жөніңіз бен e-mail-іңізді көрсетуді ұмытпаңыз.
@@ -57,12 +57,12 @@
                     <br><br>
                     <div id = "sponsor" class="row justify-content-center driving">
                       <div class="col-md-12">
-                        <h2 class="text-center">Демеушілер</h2><br>
+                        <h2 class="text-center" style="font-weight:300">Демеушілер</h2><br>
                       </div>
                       <div id="cmpn" class="col-md-auto"></div>
                       <div class="w-100"></div>
                       <div class="col-md-12">
-                        <h5 class="text-center">қолдаушылар</h5>
+                        <h5 class="text-center" style="font-weight:300">қолдаушылар</h5>
                       </div>
                       <div id="indv" class="col-md-auto"></div>
                     </div>
@@ -83,7 +83,7 @@
                 link.rel = "noopener";
                 link.target = "_blank";
                 link.href = val.link;
-                let img = `<img src="//gravatar.com/avatar/${val.hash}?s=50" title="${val.name}" class="img-fluid rounded-circle"/>`;
+                let img = `<img src="//gravatar.com/avatar/${val.hash}?s=40" title="${val.name}" class="img-fluid rounded-circle"/>`;
                 link.innerHTML = img;
                 $("#indv").append(link);
               });
@@ -94,7 +94,7 @@
                 link.rel = "noopener";
                 link.target = "_blank";
                 link.href = val.link;
-                let img = `<img src="//gravatar.com/avatar/${val.hash}?s=50" title="${val.title}" class="img-fluid rounded-circle"/>`;
+                let img = `<img src="${val.img}" title="${val.title}" class="img-fluid" style="height:50px"/>`;
                 link.innerHTML = img;
                 $("#cmpn").append(link);
               })
