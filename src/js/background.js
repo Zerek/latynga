@@ -1,7 +1,7 @@
 // Called when the user installs the extension.
 chrome.runtime.onInstalled.addListener(function (object) {
-  chrome.tabs.create({url: "https://igibek.github.io/latynga"}, function (tab) {
-      console.log("New tab launched with https://igibek.github.io/latynga");
+  chrome.tabs.create({url: "https://zerek.kz"}, function (tab) {
+      console.log("Open new tab https://zerek.kz");
   });
 });
 // Called when the user clicks on the browser action.
