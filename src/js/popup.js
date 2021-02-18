@@ -1,16 +1,18 @@
 
 function main(){
+    // get the list of urls
     let switchBtn = document.getElementById('tolatin');
 
     switchBtn.onclick = function(element) {
         console.log('Alipped: toggled button');
         chrome.tabs.query({active: true, currentWindow: true}, function(tabs) {
             var activeTab = tabs[0];
-            chrome.tabs.sendMessage(activeTab.id, { "message": "to_latin", "checked": switchBtn.checked });
+            chrome.tabs.sendMessage(activeTab.id, { "message": "to_latin", "checked": switchBtn.checked, "active": activeTab });
         });
     }
     
     let anchorTag = document.getElementById('zerek_link');
+
     anchorTag.onclick = function () {
         let url = this.getAttribute('href');
         if (url) {
