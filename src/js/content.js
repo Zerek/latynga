@@ -2,15 +2,11 @@
 const abcUrl = chrome.runtime.getURL('config/letters.json');
 
 const IGNORED_TAGS = ['STYLE', 'SCRIPT'];
-let converted = false;
+const hostname = document.location.hostname;
 
-chrome.storage.local.get({
-  urls: []
-}, function (items) {
-  console.log('Alippe local storage:', items.urls);
-  let hostname = document.location.hostname;
-  if (items.urls.includes(hostname)) {
-    latynga();
+chrome.storage.local.get(hostname, (item) => {
+  if (item[hostname]) {
+    latynga(true);
   }
 })
 
